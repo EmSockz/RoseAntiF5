@@ -1,0 +1,11 @@
+enableAntiF5: true
+blacklistPlayers:
+ - "__1abobys1__"
+ - "__1amogus1__"
+antiF5Item:
+  stand:
+    Material: WOODEN_SHOVEL
+    CustomModelData: 1
+  swim:
+    Material: WOODEN_SHOVEL
+    CustomModelData: 2
