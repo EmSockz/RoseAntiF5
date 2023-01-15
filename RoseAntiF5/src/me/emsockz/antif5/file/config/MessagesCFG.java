@@ -12,6 +12,7 @@ public enum MessagesCFG {
 	NO_PERMISSIONS("NoPerm", 0),
 	NOT_FOR_CONSOLE("NotForConsole", 0),
 	HELP_COMMAND("HelpCommand", 1),
+	HELP_COMMAND_ADMIN("HelpCommandAdmin", 1),
 	COMMAND_NOT_FOUND("CommandNotFound", 0);
 	 
 	String path;

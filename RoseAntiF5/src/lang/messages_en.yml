@@ -1,0 +1,19 @@
+NoPerm: "&cNo perm"  
+ReloadPlugin: "&aPlugin successfully reloaded"
+CommandNotFound: "&cCommand not found"
+NotForConsole: "&cThis command can only be executed by the player"
+HelpCommand:
+  - ' '
+  - '&c&lPlugin &8&l|&r &7Help Commands'
+  - ' '
+  - '&c&l» Commands&8:'
+  - '&c› &c/plugin help &7- &fShow help commands.'
+  - ' '
+HelpCommandAdmin:
+  - ' '
+  - '&c&lPlugin &8&l|&r &7Help Commands'
+  - ' '
+  - '&c&l» Commands&8:'
+  - '&c› &c/plugin help &7- &fShow help commands.'
+  - '&c› &c/plugin reload &7- &fReload plugin.'
+  - ' '

@@ -13,7 +13,7 @@ import net.kyori.adventure.audience.Audience;
 
 public class SubCommandManager implements CommandExecutor {
 
-	public static HashMap<String, PluginSubCommand> subCommands = new HashMap<>();
+	public static HashMap<String, SubCommandModel> subCommands = new HashMap<>();
 	
     public SubCommandManager() {
     	subCommands.put("reload", new ReloadCMD());

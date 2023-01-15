@@ -8,14 +8,16 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import me.emsockz.antif5.file.config.MessagesCFG;
+import me.emsockz.antif5.Main;
 
-public abstract class PluginSubCommand {
+public abstract class SubCommandModel {
 
     protected CommandSender sender;
     protected Player player;
     protected Command command;
     protected boolean isPlayer;
     protected String[] args;
+    protected Audience aud;
 
     private boolean isPlayerCommand;
     
@@ -26,6 +28,8 @@ public abstract class PluginSubCommand {
         this.player = isPlayer ? (Player) sender : null;
         this.args = args;
         this.command = command;
+        this.aud = isPlayer ? Main.getAdventure().player(player) : Main.getAdventure().console();
+        
 
         if (isPlayerCommand && !isPlayer) {
             sendMessage(MessagesCFG.NOT_FOR_CONSOLE);
@@ -36,14 +40,23 @@ public abstract class PluginSubCommand {
     }
 
     public abstract boolean execute();
+    
+    public void sendHelp() {
+		if (checkPermission("roseantif5.commands.help.admin", false))
+			sendMessage(MessagesCFG.HELP_COMMAND_ADMIN);
+		else if (checkPermission("roseantif5.commands.help", false)) 
+			sendMessage(MessagesCFG.HELP_COMMAND);	
+		else 
+			sendMessage(MessagesCFG.NO_PERMISSIONS);
+    }
 
-
-    public boolean checkPermission(String permission) {
+    public boolean checkPermission(String permission, boolean showMSG) {
     	if (this.sender.hasPermission(permission)) {
     		return true;
     	}
     	
-    	sendMessage(MessagesCFG.NO_PERMISSIONS);
+    	if (showMSG)
+    		sendMessage(MessagesCFG.NO_PERMISSIONS);
     	
     	return false;
     }
@@ -54,11 +67,11 @@ public abstract class PluginSubCommand {
 
     public void sendMessage(MessagesCFG msg){
     	if (msg.getID() == 0) {
-    		((Audience) this.sender).sendMessage(msg.getString());
+    		this.aud.sendMessage(msg.getString());
     	}
     	else {
     		for(Component s : msg.getStringList()) {
-    			((Audience) this.sender).sendMessage(s);
+    			this.aud.sendMessage(s);
     		}
     	}
     }

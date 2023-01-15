@@ -7,43 +7,45 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import me.emsockz.antif5.Main;
+import me.emsockz.antif5.file.config.PluginCFG;
 
 public class MessagesFile {
 	
-	private static File file;
-	private static FileConfiguration config;
+	private final String path = "lang/messages_"+PluginCFG.LANG+".yml";
+	private File file;
+	private FileConfiguration config;
 	
 	public MessagesFile() {
-		if (!new File(Main.getInstance().getDataFolder(), "messages.yml").exists()) {
-			Main.getInstance().saveResource("messages.yml", false);
+		if (!new File(Main.getInstance().getDataFolder(), path).exists()) {
+			Main.getInstance().saveResource(path, false);
 			
-			file = new File(Main.getInstance().getDataFolder(), "messages.yml");
+			file = new File(Main.getInstance().getDataFolder(), path);
 			config = YamlConfiguration.loadConfiguration(file);
 		} else {
-			file = new File(Main.getInstance().getDataFolder(), "messages.yml");
+			file = new File(Main.getInstance().getDataFolder(), path);
 			config = YamlConfiguration.loadConfiguration(file);
 		}
 	}
 	
 
-	public static void save() {
-		file = new File(Main.getInstance().getDataFolder(), "messages.yml");
+	public void save() {
+		file = new File(Main.getInstance().getDataFolder(), path);
 		
 		try {
 			config.save(file);
 		} catch (IOException e) {
-			throw new RuntimeException("Не удалось сохранить файл messages.yml", e);
+			throw new RuntimeException("Failed to save file "+path, e);
 		}
 		
 		config = YamlConfiguration.loadConfiguration(file);
 	}
 
-	public static void reload() {
-		file = new File(Main.getInstance().getDataFolder(), "messages.yml");
+	public void reload() {
+		file = new File(Main.getInstance().getDataFolder(), path);
 		config = YamlConfiguration.loadConfiguration(file);
 	}
 
-	public static FileConfiguration getConfig() {
+	public FileConfiguration getConfig() {
 		return config;
 	}
 }

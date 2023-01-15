@@ -15,6 +15,12 @@ permissions:
       roseantif5.commands.*: true
       roseantif5.commands.help: true
       roseantif5.commands.reload: true
+  roseantif5.commands.*:
+    description: All commands permissions
+    children:
+      roseantif5.commands.help: true
+      roseantif5.commands.help.admin: true
+      roseantif5.commands.reload: true
   roseantif5.commands.help:
     description: Show command help
   roseantif5.commands.reload:

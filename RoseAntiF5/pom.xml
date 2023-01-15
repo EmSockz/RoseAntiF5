@@ -13,6 +13,22 @@
           <release>17</release>
         </configuration>
       </plugin>
+      <plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-shade-plugin</artifactId>
+		    <version>3.2.4</version>
+			<executions>
+			  <execution>
+			    <phase>package</phase>
+			    <goals>
+			      <goal>shade</goal>
+			    </goals>
+				<configuration>
+				  <createDepencyReducedPom>false</createDepencyReducedPom>
+				</configuration>
+			  </execution>
+			</executions>
+	  </plugin>
     </plugins>
   </build>
   <repositories>
@@ -27,20 +43,20 @@
   </repositories>
   <dependencies>
     <dependency>
-      <groupId>org.spigotmc</groupId>
-      <artifactId>spigot</artifactId>
-      <version>1.19.2-R0.1-SNAPSHOT</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>net.kyori</groupId>
-      <artifactId>adventure-api</artifactId>
-      <version>4.10.1</version>
+      <artifactId>adventure-platform-bukkit</artifactId>
+      <version>4.2.0</version>
     </dependency>
     <dependency>
       <groupId>net.kyori</groupId>
       <artifactId>adventure-text-minimessage</artifactId>
-      <version>4.11.0</version>
+      <version>4.12.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.spigotmc</groupId>
+      <artifactId>spigot-api</artifactId>
+      <version>1.19.3-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 </project>

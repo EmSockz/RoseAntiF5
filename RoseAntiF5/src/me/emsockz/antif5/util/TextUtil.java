@@ -3,24 +3,22 @@ package me.emsockz.antif5.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.emsockz.antif5.file.MessagesFile;
+import me.emsockz.antif5.Main;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 
-
 public class TextUtil {
-
 
 	public static Component parseString(String string) {
 		return MiniMessage.miniMessage().deserialize(parseLegacyString(string));
 	}
 
 	public static Component getStringMessage(String string) {
-		return MiniMessage.miniMessage().deserialize(parseLegacyString(MessagesFile.getConfig().getString(string)));
+		return MiniMessage.miniMessage().deserialize(parseLegacyString(Main.getMCFG().getString(string)));
 	}
 
 	public static List<Component> getStringListMessage(String string) {
-		List<String> text = MessagesFile.getConfig().getStringList(string);		
+		List<String> text = Main.getMCFG().getStringList(string);		
 		List<String> text2 = new ArrayList<>();
 		List<Component> result = new ArrayList<>(); 
 

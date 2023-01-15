@@ -11,11 +11,16 @@ public class TabCommandManager implements TabCompleter {
 
 	@Override
 	public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
-		if (sender.hasPermission("roseantif5.help")) return listSubCommand;
+		if (args.length == 1) {
+			if (sender.hasPermission("roseantif5.help.admin")) return listSubCommandAdmin;
+			else if (sender.hasPermission("roseantif5.help")) return listSubCommandUser;
+			else return null;
+		}	
 		
 		return null;
 	}
 	
 	
-	private static ArrayList<String> listSubCommand = new ArrayList<>(List.of("help","reload"));
+	private static ArrayList<String> listSubCommandUser = new ArrayList<>(List.of("help"));
+	private static ArrayList<String> listSubCommandAdmin = new ArrayList<>(List.of("help","reload"));
 }

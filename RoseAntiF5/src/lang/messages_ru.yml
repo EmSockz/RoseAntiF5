@@ -1,0 +1,19 @@
+NoPerm: "&cНет прав"  
+ReloadPlugin: "&aПлагин успешно перезагружен"
+CommandNotFound: "&cКоманда не найдена"
+NotForConsole: "&cЭту команду может выполнять только игрок"
+HelpCommand:
+  - ' '
+  - '&c&lPlugin &8&l|&r &7Помощь по командам'
+  - ' '
+  - '&c&l» Команды&8:'
+  - '&c› &c/plugin help &7- &fПосмотреть помощь по командам.'
+  - ' '
+HelpCommandAdmin:
+  - ' '
+  - '&c&lPlugin &8&l|&r &7Помощь по командам'
+  - ' '
+  - '&c&l» Commands&8:'
+  - '&c› &c/plugin help &7- &fПосмотреть помощь по командам.'
+  - '&c› &c/plugin reload &7- &fПерезагрузить плагин'
+  - ' '
