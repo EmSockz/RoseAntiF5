@@ -5,7 +5,4 @@ blacklistPlayers:
 antiF5Item:
   stand:
     Material: WOODEN_SHOVEL
-    CustomModelData: 1
-  swim:
-    Material: WOODEN_SHOVEL
-    CustomModelData: 2
+    CustomModelData: 1000
