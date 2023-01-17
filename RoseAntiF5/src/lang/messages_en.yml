@@ -2,6 +2,11 @@ NoPerm: "&cNo perm"
 ReloadPlugin: "&aPlugin successfully reloaded"
 CommandNotFound: "&cCommand not found"
 NotForConsole: "&cThis command can only be executed by the player"
+PlayerNotFound: "&cPlayer not found"
+AntiF5Enabled: "&cAntiF5 has been enabled for player"
+AntiF5Disabled: "&cAntiF5 has been disabled for player"
+AntiF5PlayerEnabled: "&cAntiF5 has been enabled for player {player}"
+AntiF5PlayerDisabled: "&cAntiF5 has been disabled for player {player}"
 HelpCommand:
   - ' '
   - '&c&lPlugin &8&l|&r &7Help Commands'

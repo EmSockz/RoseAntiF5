@@ -3,11 +3,14 @@ package me.emsockz.antif5.commands;
 import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.text.Component;
 
+import java.util.HashMap;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import me.emsockz.antif5.file.config.MessagesCFG;
+import me.emsockz.antif5.util.TextUtil;
 import me.emsockz.antif5.Main;
 
 public abstract class SubCommandModel {
@@ -72,6 +75,17 @@ public abstract class SubCommandModel {
     	else {
     		for(Component s : msg.getStringList()) {
     			this.aud.sendMessage(s);
+    		}
+    	}
+    }
+    
+    public void sendMessage(MessagesCFG msg, HashMap<String, String> replace){
+    	if (msg.getID() == 0) {
+    		this.aud.sendMessage(TextUtil.replace(msg.getString(), replace));
+    	}
+    	else {
+    		for(Component s : msg.getStringList()) {
+    			this.aud.sendMessage(TextUtil.replace(s, replace));
     		}
     	}
     }

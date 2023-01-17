@@ -2,6 +2,11 @@ NoPerm: "&cНет прав"
 ReloadPlugin: "&aПлагин успешно перезагружен"
 CommandNotFound: "&cКоманда не найдена"
 NotForConsole: "&cЭту команду может выполнять только игрок"
+PlayerNotFound: "&cИгрок не найден"
+AntiF5Enabled: "&cАнтиФ5 был включен"
+AntiF5Disabled: "&cАнтиФ5 был выключен"
+AntiF5PlayerEnabled: "&cАнтиФ5 был включен игроку {player}"
+AntiF5PlayerDisabled: "&cАнтиФ5 был выключен игроку {player}"
 HelpCommand:
   - ' '
   - '&c&lPlugin &8&l|&r &7Помощь по командам'

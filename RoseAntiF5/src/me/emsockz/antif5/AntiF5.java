@@ -1,7 +1,9 @@
 package me.emsockz.antif5;
 
 import java.util.HashMap;
+import java.util.List;
 
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
 
@@ -35,4 +37,32 @@ public class AntiF5 {
 		add(p);
 	}
 	
+	public static boolean toggle(Player p) {
+		FileConfiguration cfg = Main.getInstance().getConfig();
+		boolean toggle = !(PluginCFG.BLACKLIST_PLAYERS.contains(p.getName()));
+		
+		//если у игрока включен АнтиФ5
+		if (toggle) {
+			List<String> l = cfg.getStringList("blacklistPlayers");
+			l.add(p.getName());
+			cfg.set("blacklistPlayers", l);
+			PluginCFG.BLACKLIST_PLAYERS = l;
+			Main.getInstance().saveConfig();
+			Main.getInstance().reloadConfig();
+			remove(p);
+		}
+		
+		//если у игрока выключен АнтиФ5
+		else {
+			List<String> l = cfg.getStringList("blacklistPlayers");
+			l.remove(p.getName());
+			cfg.set("blacklistPlayers", l);
+			PluginCFG.BLACKLIST_PLAYERS = l;
+			Main.getInstance().saveConfig();
+			Main.getInstance().reloadConfig();
+			add(p);
+		}
+		
+		return !toggle;
+	}
 }

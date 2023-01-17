@@ -47,6 +47,10 @@ public class Main extends JavaPlugin {
         PluginCommand pluginCommand = instance.getCommand("antif5");
     		pluginCommand.setExecutor(new SubCommandManager());
     		pluginCommand.setTabCompleter(new TabCommandManager());
+    		
+        Bukkit.getOnlinePlayers().forEach((player) -> {
+        	AntiF5.add(player);
+        });
     }
     
     @Override

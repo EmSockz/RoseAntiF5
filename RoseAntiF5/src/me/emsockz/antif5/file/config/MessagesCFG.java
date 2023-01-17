@@ -13,6 +13,11 @@ public enum MessagesCFG {
 	NOT_FOR_CONSOLE("NotForConsole", 0),
 	HELP_COMMAND("HelpCommand", 1),
 	HELP_COMMAND_ADMIN("HelpCommandAdmin", 1),
+	PLAYER_NOT_FOUND("PlayerNotFound", 0),
+	ANTIF5_ENABLED("AntiF5Enabled", 0),
+	ANTIF5_DISABLED("AntiF5Disabled", 0),
+	ANTIF5_PLAYER_ENABLED("AntiF5PlayerEnabled", 0),
+	ANTIF5_PLAYER_DISABLED("AntiF5PlayerDisabled", 0),
 	COMMAND_NOT_FOUND("CommandNotFound", 0);
 	 
 	String path;

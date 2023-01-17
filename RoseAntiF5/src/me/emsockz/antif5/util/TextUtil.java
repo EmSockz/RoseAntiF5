@@ -1,6 +1,7 @@
 package me.emsockz.antif5.util;
  
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import me.emsockz.antif5.Main;
@@ -54,5 +55,15 @@ public class TextUtil {
 	    		.replace("§8", "<dark_gray>").replace("§9", "<blue>").replace("§a", "<green>").replace("§c", "<red>").replace("§d", "<light_purple>")
 	    		.replace("§b", "<aqua>").replace("§f", "<white>").replace("§l", "<bold>").replace("§n", "<underlined>").replace("§o", "<italic>")
 	    		.replace("§m", "<strikethrough>").replace("§k", "<obfuscated>");		
+	}
+	
+	public static Component replace(Component text, HashMap<String, String> replaced) {
+		String str = MiniMessage.miniMessage().serialize(text);
+		
+		for (String s : replaced.keySet()) {
+			str = str.replace(s, replaced.get(s));
+		}
+		
+		return MiniMessage.miniMessage().deserialize(str);
 	}
 }

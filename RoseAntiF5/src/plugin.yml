@@ -14,14 +14,32 @@ permissions:
     children:
       roseantif5.commands.*: true
       roseantif5.commands.help: true
+      roseantif5.commands.help.admin: true
       roseantif5.commands.reload: true
+      roseantif5.commands.enable: true
+      roseantif5.commands.disable: true
+      roseantif5.commands.toggle: true
+      roseantif5.commands.toggle.other: true
   roseantif5.commands.*:
     description: All commands permissions
     children:
+      roseantif5.commands.*: true
       roseantif5.commands.help: true
       roseantif5.commands.help.admin: true
       roseantif5.commands.reload: true
+      roseantif5.commands.enable: true
+      roseantif5.commands.disable: true
+      roseantif5.commands.toggle: true
+      roseantif5.commands.toggle.other: true
   roseantif5.commands.help:
     description: Show command help
   roseantif5.commands.reload:
     description: Reload plugin
+  roseantif5.commands.enable:
+    description: Enable AntiF5
+  roseantif5.commands.disable:
+    description: Disable AntiF5
+  roseantif5.commands.toggle:
+    description: Toggle AntiF5
+  roseantif5.commands.toggle.other:
+    description: Toggle AntiF5 other player
