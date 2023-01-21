@@ -16,7 +16,7 @@ public class Swimming {
 		
 	public static void listening() {
 		Bukkit.getOnlinePlayers().forEach((player) -> {
-			if (player.getLocation().getBlock().getType() == Material.WATER) {
+			if (player.getLocation().getBlock().getType() == Material.WATER || player.getLocation().getBlock().getType() == Material.SEAGRASS || player.getLocation().getBlock().getType() == Material.TALL_SEAGRASS) {
 				if (players.get(player.getName()) == true) return;
 				else {
 					players.put(player.getName(), true);

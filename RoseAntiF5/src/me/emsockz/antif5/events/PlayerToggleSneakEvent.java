@@ -26,11 +26,11 @@ public class PlayerToggleSneakEvent extends Event {
 		if (PluginCFG.BLACKLIST_PLAYERS.contains(player.getName())) return;
 		
 		if (isSneaking) {
-			AntiF5.stands.get(player.getName()).getEquipment().setHelmet(PluginCFG.ANTIF5_ITEM_SNEAK);
+			AntiF5.stands.get(playerName).getEquipment().setHelmet(PluginCFG.ANTIF5_ITEM_SNEAK);
 		}
 		
 		else {
-			AntiF5.stands.get(player.getName()).getEquipment().setHelmet(PluginCFG.ANTIF5_ITEM_STAND);
+			AntiF5.stands.get(playerName).getEquipment().setHelmet(PluginCFG.ANTIF5_ITEM_STAND);
 		}
 	}
 	

@@ -5,6 +5,7 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 import me.emsockz.antif5.AntiF5;
+import me.emsockz.antif5.Main;
 import me.emsockz.antif5.file.config.PluginCFG;
 
 public class PlayerToggleCrawlEvent extends Event {
@@ -23,13 +24,14 @@ public class PlayerToggleCrawlEvent extends Event {
 		this.player = player;
 		this.playerName = player.getName();
 		this.isCrawling = isCrawling;
-		
+		Main.debug("PlayerToggleCrawlEvent");
+		Main.debug(String.valueOf(isCrawling));
 		if (isCrawling) {
-			AntiF5.stands.get(player.getName()).getEquipment().setHelmet(PluginCFG.ANTIF5_ITEM_CRAWL);
+			AntiF5.stands.get(playerName).getEquipment().setHelmet(PluginCFG.ANTIF5_ITEM_CRAWL);
 		}
 		
 		else {
-			AntiF5.stands.get(player.getName()).getEquipment().setHelmet(PluginCFG.ANTIF5_ITEM_STAND);
+			AntiF5.stands.get(playerName).getEquipment().setHelmet(PluginCFG.ANTIF5_ITEM_STAND);
 		}
 	}
 	

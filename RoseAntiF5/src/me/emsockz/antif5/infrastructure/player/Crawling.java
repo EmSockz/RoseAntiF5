@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
+import me.emsockz.antif5.Main;
 import me.emsockz.antif5.events.PlayerToggleCrawlEvent;
 
 import static me.emsockz.antif5.Main.schedulerRun;
@@ -17,6 +18,7 @@ public class Crawling {
 	
 	public static void listening() {
 		Bukkit.getOnlinePlayers().forEach((player) -> {
+			Main.debug("player.isSwimming() :" + player.isSwimming() );
 			if (player.isSwimming() && player.getLocation().getBlock().getType() != Material.WATER) {
 				if (players.get(player.getName()) == true) return;
 				else {

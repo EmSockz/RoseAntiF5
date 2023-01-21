@@ -33,7 +33,6 @@ public class PlayerToggleSwimEvent extends Event {
 		if (PluginCFG.BLACKLIST_PLAYERS.contains(playerName)) return;
 		
 		if (isSwimming) {
-			player.removePassenger(AntiF5.stands.get(playerName));
 			BukkitTask t = Bukkit.getScheduler().runTaskTimer(Main.getInstance(), () -> {
 				if (player.isSwimming()) {
 					AntiF5.stands.get(playerName).getEquipment().setHelmet(PluginCFG.ANTIF5_ITEM_SWIM);
