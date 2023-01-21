@@ -5,6 +5,7 @@ import java.util.HashMap;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import me.emsockz.antif5.Main;
 import me.emsockz.antif5.events.PlayerToggleSneakEvent;
 import static me.emsockz.antif5.Main.schedulerRun;
 
@@ -13,7 +14,7 @@ public class Sneaking {
 	public static HashMap<String, Boolean> players = new HashMap<>();
 		
 	public static void listening() {
-		Bukkit.getOnlinePlayers().forEach((player) -> {
+		Main.players.forEach((player) -> {
 			if (!player.isSwimming() && player.isSneaking()) {
 				if (players.get(player.getName()) == true) return;
 				else {

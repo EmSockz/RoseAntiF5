@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
+import me.emsockz.antif5.Main;
 import me.emsockz.antif5.events.PlayerToggleSwimEvent;
 
 import static me.emsockz.antif5.Main.schedulerRun;
@@ -15,7 +16,7 @@ public class Swimming {
 	public static HashMap<String, Boolean> players = new HashMap<>();
 		
 	public static void listening() {
-		Bukkit.getOnlinePlayers().forEach((player) -> {
+		Main.players.forEach((player) -> {
 			if (player.getLocation().getBlock().getType() == Material.WATER || player.getLocation().getBlock().getType() == Material.SEAGRASS || player.getLocation().getBlock().getType() == Material.TALL_SEAGRASS) {
 				if (players.get(player.getName()) == true) return;
 				else {

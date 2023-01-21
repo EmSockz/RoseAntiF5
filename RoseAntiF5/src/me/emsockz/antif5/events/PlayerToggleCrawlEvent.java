@@ -24,7 +24,6 @@ public class PlayerToggleCrawlEvent extends Event {
 		this.player = player;
 		this.playerName = player.getName();
 		this.isCrawling = isCrawling;
-		Main.debug("PlayerToggleCrawlEvent");
 		Main.debug(String.valueOf(isCrawling));
 		if (isCrawling) {
 			AntiF5.stands.get(playerName).getEquipment().setHelmet(PluginCFG.ANTIF5_ITEM_CRAWL);

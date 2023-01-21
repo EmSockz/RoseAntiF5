@@ -22,9 +22,11 @@ public class PlayerJoinListener implements Listener {
 		Swimming.players.put(p.getName(), false);
 		
 		
-		Main.schedulerRun5(() -> {
-			AntiF5.add(p);
-		});
+		if (!p.isDead())
+			Main.schedulerRun5(() -> {
+				AntiF5.add(p);
+			});
+		
 		
 		AntiF5.stands.forEach((k, v) -> {
 			p.hideEntity(Main.getInstance(), v);

@@ -1,12 +1,14 @@
 package me.emsockz.antif5;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.emsockz.antif5.file.MessagesFile;
@@ -25,6 +27,8 @@ import me.emsockz.antif5.commands.SubCommandManager;
 import me.emsockz.antif5.commands.TabCommandManager;
 
 public class Main extends JavaPlugin {
+	
+	public static List<Player> players = new ArrayList<>();
 	
 	private static Main instance = null;
 	private static MessagesFile messages = null;
@@ -57,7 +61,10 @@ public class Main extends JavaPlugin {
     		
         Bukkit.getOnlinePlayers().forEach((player) -> {
         	AntiF5.add(player);
+        	players.add(player);
         });
+        
+        
         
         Bukkit.getScheduler().runTaskTimerAsynchronously(instance, () -> {
         	Crawling.listening();

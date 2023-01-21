@@ -17,8 +17,7 @@ public class Crawling {
 		
 	
 	public static void listening() {
-		Bukkit.getOnlinePlayers().forEach((player) -> {
-			Main.debug("player.isSwimming() :" + player.isSwimming() );
+		Main.players.forEach((player) -> {
 			if (player.isSwimming() && player.getLocation().getBlock().getType() != Material.WATER) {
 				if (players.get(player.getName()) == true) return;
 				else {

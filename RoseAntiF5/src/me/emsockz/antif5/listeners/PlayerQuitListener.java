@@ -19,7 +19,9 @@ public class PlayerQuitListener implements Listener {
 			PlayerToggleSwimEvent.tasks.get(p.getName()).cancel();
 			PlayerToggleSwimEvent.tasks.remove(p.getName());
 		}
-		AntiF5.remove(p);
+		
+		if (!p.isDead()) {
+			AntiF5.remove(p);
+		}
 	}
-
 }

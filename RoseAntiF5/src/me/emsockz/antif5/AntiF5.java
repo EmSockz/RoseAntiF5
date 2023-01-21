@@ -20,7 +20,7 @@ public class AntiF5 {
 	public static void add(Player p) {
 		String name = p.getName();
 		if (PluginCFG.BLACKLIST_PLAYERS.contains(name)) return;
-		
+		Main.players.add(p);
 		ArmorStand stand = null;
 				
 		if (p.isSwimming())
@@ -44,14 +44,17 @@ public class AntiF5 {
 	public static void remove(Player p) {
 		String name = p.getName();
 		if (!stands.containsKey(name)) return;
+		Main.players.remove(p);
 		stands.get(name).setHealth(0);
 		stands.get(name).remove();
 		stands.remove(name);
 	}
 	
 	public static void update(Player p) {
+		Main.players.remove(p);	
 		remove(p);
 		add(p);
+		Main.players.add(p);	
 	}
 	
 	public static boolean toggle(Player p) {
