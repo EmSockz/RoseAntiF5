@@ -1,5 +1,7 @@
 package me.emsockz.antif5.commands.sub;
 
+import java.util.HashMap;
+
 import me.emsockz.antif5.AntiF5;
 import me.emsockz.antif5.Main;
 import me.emsockz.antif5.commands.SubCommandModel;
@@ -23,8 +25,9 @@ public class DisableCMD extends SubCommandModel {
     	AntiF5.stands.forEach((name, stand) -> {
     		stand.setHealth(0);
     		stand.remove();
-    		AntiF5.stands.remove(name);
     	});
+    	
+    	AntiF5.stands = new HashMap<>();
 		
 		return true;
 	}

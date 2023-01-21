@@ -20,7 +20,6 @@ public class TabCommandManager implements TabCompleter {
 		return null;
 	}
 	
-	
 	private static ArrayList<String> listSubCommandUser = new ArrayList<>(List.of("help"));
-	private static ArrayList<String> listSubCommandAdmin = new ArrayList<>(List.of("help","reload"));
+	private static ArrayList<String> listSubCommandAdmin = new ArrayList<>(List.of("help","reload","enable","disable","toggle"));
 }

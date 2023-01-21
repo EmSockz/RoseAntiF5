@@ -1,8 +1,18 @@
+lang: "en"
 enableAntiF5: true
 blacklistPlayers:
- - "__1abobys1__"
- - "__1amogus1__"
+ - "EmSockz"
 antiF5Item:
   stand:
     Material: WOODEN_SHOVEL
     CustomModelData: 1000
+  sneak:
+    Material: WOODEN_SHOVEL
+    CustomModelData: 1001
+  swim:
+    Material: WOODEN_SHOVEL
+    CustomModelData: 1002
+  crawl:
+    Material: WOODEN_SHOVEL
+    CustomModelData: 1003
+
